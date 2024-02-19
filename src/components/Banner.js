@@ -51,6 +51,20 @@ export const Banner = () => {
     }
   };
 
+  const [paragraphText, setParagraphText] = useState("");
+
+  const changeLanguage = (language) => {
+    if (language === "english") {
+      setParagraphText(
+        "I am a developer with a foundation in web technologies such as JavaScript, HTML, CSS, React, Node.js, Express, Sequelize, and PostgreSQL. Driven by a passion for learning and problem-solving, I have acquired fundamental skills in web development and am eager to continue growing as a Full Stack Developer. Having worked on both personal and collaborative projects, I have gained valuable experience in teamwork and agile development. I am seeking an opportunity to be part of a team where I can contribute, learn, grow, and enhance my skills while building technological solutions."
+      );
+    } else if (language === "spanish") {
+      setParagraphText(
+        "Desarrollador con base en tecnologías web como JavaScript, HTML, CSS, React, Node.js, Express, Sequelize y PostgreSQL. Apasionado por el aprendizaje y la resolución de problemas, he adquirido habilidades fundamentales en el desarrollo web y estoy emocionado de seguir creciendo como Full Stack Developer. He trabajado en proyectos personales y colaborativos, lo que me ha permitido adquirir experiencia en el trabajo en equipo y el desarrollo ágil. Busco una oportunidad para formar parte de un equipo donde pueda contribuir, aprender, crecer y desarrollar mis habilidades mientras construyo soluciones tecnológicas."
+      );
+    }
+  };
+
   return (
     <section className="banner" id="home">
       <Container>
@@ -74,15 +88,12 @@ export const Banner = () => {
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
-                  <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book.
-                  </p>
-                  <button onClick={() => console.log("connect")}>
-                    Let’s Connect <ArrowRightCircle size={25} />
+                  <p>{paragraphText}</p>
+                  <button onClick={() => changeLanguage("english")}>
+                    English bio
+                  </button>
+                  <button onClick={() => changeLanguage("spanish")}>
+                    Español bio
                   </button>
                 </div>
               )}
